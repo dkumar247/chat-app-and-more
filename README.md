@@ -26,4 +26,4 @@ Once the dependencies are installed, you can run  `npm run dev` to start the app
 
 ---
 
->You can check out the deployed version [here](https://chat-app-and-more.herokuapp.com/){:target="_blank"}
+>You can check out the deployed version [here](https://chat-app-and-more.herokuapp.com/)
