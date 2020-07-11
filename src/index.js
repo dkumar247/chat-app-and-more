@@ -59,7 +59,6 @@ io.on('connection', (socket) => {
     socket.on('sendMessage', (messageData, callback) => {
         const user = getUser(socket.id)
         const filter = new Filter()
-        const regex = emojiRegex();
         // for emoji support
         messageData = checkText(messageData);
         if(filter.isProfane(messageData)) {
