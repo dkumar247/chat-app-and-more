@@ -1,4 +1,10 @@
 const socket = io()
+// var player = new Audio('hasty-ba-dum-tss.mp3');
+// player.src="../sound/hasty-ba-dum-tss.mp3"
+// player.play()
+// var player = new Audio('https://interactive-examples.mdn.mozilla.net/media/examples/t-rex-roar.mp3');
+// var player = new Audio('https://upload.wikimedia.org/wikipedia/en/2/2a/Nyan_cat.ogg');
+
 
 // Elements
 const $messageForm = document.querySelector('#message-form')
@@ -7,6 +13,7 @@ const $messageFormButton = $messageForm.querySelector('button')
 const $sendLocationButton = document.querySelector('#send-location')
 const $messages = document.querySelector('#messages')
 const $sidebar = document.querySelector('#sidebar')
+const $mySound = document.querySelector("#sound");
 
 // Templates
 const messageTemplate = document.querySelector('#message-template').innerHTML
@@ -47,6 +54,10 @@ const autoscroll = () => {
     if(containerHeight - newMessageHeight <= scrollOffset) {
         $messages.scrollTop = $messages.scrollHeight
     }
+    // player.addEventListener("canplaythrough", event => {
+        /* the audio is now playable; play it if permissions allow */
+        // player.play();
+    //   });
 
 }
 
@@ -58,6 +69,7 @@ socket.on('message', (message) => {
     })
     $messages.insertAdjacentHTML('beforeend', html)
     console.log(message)
+    $mySound.play();
     autoscroll()
 })
 
@@ -69,6 +81,7 @@ socket.on('locationMessage', (locationMessage) => {
     })
     $messages.insertAdjacentHTML('beforeend', locationHtml)
     // console.log(locationMessage)
+    $mySound.play();
     autoscroll()
 })
 
