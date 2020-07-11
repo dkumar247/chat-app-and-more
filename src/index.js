@@ -2,7 +2,8 @@ const path = require('path')
 const http = require('http')
 const express = require('express')
 const socketio = require('socket.io')
- 
+const { checkText }  = require('smile2emoji')
+
 const Filter = require('bad-words')
 const { generateMessage, generateLocationMessage } = require('./utils/messages')
 const { addUser, removeUser, getUser, getUsersInRoom } = require('./utils/users')
@@ -58,10 +59,13 @@ io.on('connection', (socket) => {
     socket.on('sendMessage', (messageData, callback) => {
         const user = getUser(socket.id)
         const filter = new Filter()
-
+        const regex = emojiRegex();
+        // for emoji support
+        messageData = checkText(messageData);
         if(filter.isProfane(messageData)) {
             return callback('Profanity is not allowed!')
         }
+
         io.to(user.room).emit('message', generateMessage(user.username, messageData))
         callback()
     })
