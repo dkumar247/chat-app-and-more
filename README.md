@@ -12,6 +12,10 @@ This is a node.js chat application powered by Socket.IO and Express that provide
 
 ---
 
+![chathome](https://github.com/dkumar247/image-repo/blob/13495e0a4dd536d54e9210666ac64c83573abec5/ChatAppAndMoreScreen1.png)
+
+![chatpage](https://github.com/dkumar247/image-repo/blob/13495e0a4dd536d54e9210666ac64c83573abec5/ChatAppAndMoreScreen2.png)
+
 ## Setup
 Clone this repo to your desktop and run `npm install` to install all the dependencies.
 
@@ -26,4 +30,4 @@ Once the dependencies are installed, you can run  `npm run dev` to start the app
 
 ---
 
->You can check out the deployed version [here](https://chat-app-and-more.herokuapp.com/)
+>You can check out the deployed version [here](https://chatappandmore.onrender.com/)
