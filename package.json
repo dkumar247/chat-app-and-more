@@ -15,9 +15,9 @@
     "bad-words": "^3.0.3",
     "express": "^4.17.1",
     "smile2emoji": "^0.1.0",
-    "socket.io": "^2.3.0"
+    "socket.io": "^4.7.5"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "nodemon": "^3.1.4"
   }
 }
